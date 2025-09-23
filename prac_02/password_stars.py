@@ -4,11 +4,9 @@ def main():
     password = get_password()
     print_astericks(password)
 
-
 def print_astericks(password):
     for i in range(len(password)):
         print("*", end=" ")
-
 
 def get_password():
     password = input("Enter a password: ")
@@ -16,6 +14,5 @@ def get_password():
         print(f"Password must be {MIN_LENGTH} charcaters long")
         password = input("Enter a password: ")
     return password
-
 
 main()
