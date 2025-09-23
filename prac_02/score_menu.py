@@ -10,12 +10,12 @@ def main():
     print(MENU)
     choice = input("> ")
     while choice != "Q":
-        if choice == "G":
+        if choice == "G": # do I need this ?!
             get_valid_score()
         elif choice == "P":
             print_result(score)
         elif choice == "S":
-            pass
+            print_stars(score)
         else:
             print("Invalid option")
         print(MENU)
@@ -38,5 +38,9 @@ def print_result(score):
         print("Passable")
     else:
         print("Bad")
+
+def print_stars(score):
+    for i in range (score):
+        print("*", end = " ")
 
 main()
