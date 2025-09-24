@@ -1,7 +1,3 @@
-"""
-Program for temperature conversion
-"""
-
 MENU = """C - Convert Celsius to Fahrenheit
 F - Convert Fahrenheit to Celsius
 Q - Quit"""
@@ -28,11 +24,13 @@ def main():
 
 
 def calculate_fahrenheit(celsius):
+    """ Calculate fahrenheit from celsius input"""
     fahrenheit = celsius * 9.0 / 5 + 32
     return fahrenheit
 
 
 def calculate_celsius(fahrenheit):
+    """ Calculate celsius from fahrenheit input"""
     celsius = 5 / 9 * (fahrenheit - 32)
     return celsius
 

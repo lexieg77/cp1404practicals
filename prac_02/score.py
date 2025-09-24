@@ -1,7 +1,3 @@
-"""
-Program to determine score status
-"""
-
 import random
 
 
@@ -17,6 +13,7 @@ def main():
 
 
 def determine_score_status(score):
+    """ Determine status from score inputted by the user"""
     if score < 0 or score > 100:
         status = "Invalid score"
     elif score >= 90:
