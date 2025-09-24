@@ -6,6 +6,7 @@ MENU = """C - Convert Celsius to Fahrenheit
 F - Convert Fahrenheit to Celsius
 Q - Quit"""
 
+
 def main():
     print(MENU)
     choice = input(">>> ").upper()
@@ -25,12 +26,15 @@ def main():
         choice = input(">>> ").upper()
     print("Thank you.")
 
+
 def calculate_fahrenheit(celsius):
     fahrenheit = celsius * 9.0 / 5 + 32
     return fahrenheit
 
+
 def calculate_celsius(fahrenheit):
     celsius = 5 / 9 * (fahrenheit - 32)
     return celsius
+
 
 main()
