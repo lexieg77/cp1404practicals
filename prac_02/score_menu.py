@@ -11,7 +11,7 @@ def main():
     choice = input("> ")
     while choice != "Q":
         if choice == "G": # do I need this ?!
-            get_valid_score()
+            score = get_valid_score()
         elif choice == "P":
             print_result(score)
         elif choice == "S":
@@ -40,7 +40,6 @@ def print_result(score):
         print("Bad")
 
 def print_stars(score):
-    for i in range (score):
-        print("*", end = " ")
+    print("*" * score)
 
 main()
