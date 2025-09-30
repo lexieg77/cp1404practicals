@@ -5,10 +5,10 @@ print(user_name, file = out_file)
 out_file.close()
 
 # Q2.
-out_file = open("name.txt", 'r')
-name = out_file.readline().strip()
+in_file = open("name.txt", 'r')
+name = in_file.read().strip()
 print(f"Hi {name}!")
-out_file.close()
+in_file.close()
 
 # Q3.
 with open("numbers.txt", 'r') as in_file:
