@@ -3,7 +3,7 @@
 
 # What was the smallest number you could have seen, what was the largest?
 # The smallest possible is 5 and the largest possible is 20
-
+# '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 # What did you see on line 2?
 # Printed a random odd number between 3 and 10
@@ -13,9 +13,16 @@
 
 # Could line 2 have produced a 4?
 # No as it only printed odd numbers between 3 and 10
+# '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 # What did you see on line 3?
 # Printed a random decimal between 2.5 and 5.5
 
 # What was the smallest number you could have seen, what was the largest?
 # The smallest would have been 2.5 and the largest 5.5
+# '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+# Produce a random number between 1 and 100 inclusive
+import random
+print(random.randint(0, 100))
+
