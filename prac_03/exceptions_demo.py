@@ -15,6 +15,11 @@ Answer the following questions:
 try:
     numerator = int(input("Enter the numerator: "))
     denominator = int(input("Enter the denominator: "))
+
+    # Avoid ZeroDivisionError
+    while denominator == 0:
+        denominator = int(input("Please enter a non-zero denominator: "))
+
     fraction = numerator / denominator
     print(fraction)
 
