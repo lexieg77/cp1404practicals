@@ -41,19 +41,14 @@ def is_valid_password(password):
             number_of_upper += 1
         elif character.islower():
             number_of_lower += 1
-        else:
+        elif character in SPECIAL_CHARACTERS:
             number_of_special +=1
 
-    if number_of_lower == 0:
-        return False
-    if number_of_upper == 0:
-        return False
-    if number_of_digit == 0:
+    if number_of_lower == 0 or number_of_upper == 0 or number_of_digit == 0:
         return False
 
-    if IS_SPECIAL_CHARACTER_REQUIRED:
-        if number_of_special == 0:
-            return False
+    if IS_SPECIAL_CHARACTER_REQUIRED and number_of_special == 0:
+        return False
 
     # if we get here (without returning False), then the password must be valid
     return True
