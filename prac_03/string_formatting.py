@@ -33,7 +33,7 @@ for i, number in enumerate(numbers, 1):
     print(f"Number {i} is {number:5}")
 
 # 1922 Gibson L-5 CES for about $16,036!
-print(f"{year} {name} for about ${cost}!")
+print(f"{year} {name} for about ${cost:,.0f}!")
 
 # produce the following right-aligned output (DO NOT use a list):
 # 2 ^ 0 is    1
