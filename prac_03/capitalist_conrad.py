@@ -16,12 +16,11 @@ MAX_PRICE = 100.0
 INITIAL_PRICE = 10.0
 FILENAME = "capitalist_conrad_file.txt"
 
-price = INITIAL_PRICE
-print(f"${price:,.2f}")
-
-number_of_days = 0
-
 out_file = open(FILENAME, 'w')
+number_of_days = 0
+price = INITIAL_PRICE
+
+print(f"${price:,.2f}", file = out_file)
 
 while MIN_PRICE <= price <= MAX_PRICE:
     price_change = 0
