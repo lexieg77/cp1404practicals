@@ -9,10 +9,10 @@ The price should be displayed to the nearest cent (e.g. $33.59, not $33.59182329
 """
 import random
 
-MAX_INCREASE = 0.1  # 10%
-MAX_DECREASE = 0.05  # 5%
-MIN_PRICE = 1.00
-MAX_PRICE = 1000.0
+MAX_INCREASE = 0.175    # 17.5%
+MAX_DECREASE = 0.05     # 5%
+MIN_PRICE = 1.0
+MAX_PRICE = 100.0
 INITIAL_PRICE = 10.0
 
 price = INITIAL_PRICE
