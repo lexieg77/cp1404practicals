@@ -1,0 +1,6 @@
+import random
+
+NUMBERS_PER_LINE = 6
+MIN_NUMBER = 1
+MAX_NUMBER = 45
+
