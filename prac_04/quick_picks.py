@@ -4,6 +4,7 @@ NUMBERS_PER_LINE = 6
 MIN_NUMBER = 1
 MAX_NUMBER = 45
 
+
 def main():
     number_of_quick_picks = int(input("How many quick picks would you like? "))
 
@@ -20,4 +21,6 @@ def main():
         for number in quick_pick:
             formatted_numbers.append(f"{number:2}")
         print(" ".join(formatted_numbers))
+
+
 main()
