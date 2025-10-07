@@ -9,12 +9,15 @@ def main():
 
     for i in range(number_of_quick_picks):
         numbers = []
-        for j in range(NUMBERS_PER_LINE + 1):
+        for j in range(NUMBERS_PER_LINE):
             number = random.randint(MIN_NUMBER, MAX_NUMBER)
             if number not in numbers:
                 numbers.append(number)
 
         quick_pick = sorted(numbers)
 
-
+        formatted_numbers = []
+        for number in quick_pick:
+            formatted_numbers.append(f"{number:2}")
+        print(" ".join(formatted_numbers))
 main()
