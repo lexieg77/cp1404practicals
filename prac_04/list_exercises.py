@@ -23,6 +23,7 @@ else:
     print("Access denied")
 
 # 3. Extend basic list operations
+numbers = []
 i = 1
 user_input = int(input(f"Number {i}: "))
 while user_input != 0:
