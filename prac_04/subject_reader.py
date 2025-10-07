@@ -26,6 +26,7 @@ def load_data(filename=FILENAME):
 
 
 def display_subject_details(subjects):
+    """Display subject data nicely."""
     for subject in subjects:
         print(f"{subject[0]} is taught by {subject[1]:12} and has {subject[2]:3} students")
 
