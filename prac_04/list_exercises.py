@@ -39,8 +39,13 @@
 
 # 4. Indefinite set of strings
 set_of_strings = []
+repeated_strings = []
 user_input = input("Enter a string: ")
 while user_input != "":
     set_of_strings.append(user_input)
     user_input = input("Enter a string: ")
-print(set_of_strings)
+
+for item in set_of_strings:
+    if set_of_strings.count(item) > 1 and item not in repeated_strings:
+        repeated_strings.append(item)
+print(repeated_strings)
