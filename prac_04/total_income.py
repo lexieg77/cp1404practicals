@@ -13,9 +13,13 @@ def main():
         income = float(input(f"Enter income for month {month}: "))
         incomes.append(income)
 
+    print_report(incomes)
+
+
+def print_report(incomes):
     print("\nIncome Report\n-------------")
     total = 0
-    for month in range(1, number_of_months + 1):
+    for month, income in enumerate(incomes, 1):
         income = incomes[month - 1]
         total += income
         print("Month {:2} - Income: ${:10.2f} Total: ${:10.2f}".format(month, income, total))
