@@ -24,3 +24,4 @@ with open("numbers.txt", 'r') as in_file:
         number = int(line)
         total += number
 print(total)
+
