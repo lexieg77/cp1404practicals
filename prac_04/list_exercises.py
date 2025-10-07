@@ -37,15 +37,25 @@
 # print(f"The largest number is {max(numbers)}")
 # print(f"The average of the numbers is {(sum(numbers)/len(numbers))}")
 
-# 4. Indefinite set of strings
-set_of_strings = []
-repeated_strings = []
-user_input = input("Enter a string: ")
-while user_input != "":
-    set_of_strings.append(user_input)
-    user_input = input("Enter a string: ")
+# # 4. Indefinite set of strings
+# set_of_strings = []
+# repeated_strings = []
+# user_input = input("Enter a string: ")
+# while user_input != "":
+#     set_of_strings.append(user_input)
+#     user_input = input("Enter a string: ")
+#
+# for item in set_of_strings:
+#     if set_of_strings.count(item) > 1 and item not in repeated_strings:
+#         repeated_strings.append(item)
+# print(repeated_strings)
 
-for item in set_of_strings:
-    if set_of_strings.count(item) > 1 and item not in repeated_strings:
-        repeated_strings.append(item)
-print(repeated_strings)
+# 5. Memberwise Addition
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+new_list = []
+
+for i in range(len(list1)):
+    addition = list1[i] + list2[i]
+    new_list.append(addition)
+print(new_list)
