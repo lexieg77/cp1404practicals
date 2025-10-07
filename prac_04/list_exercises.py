@@ -21,3 +21,18 @@ if username in usernames:
     print("Access granted")
 else:
     print("Access denied")
+
+# 3. Extend basic list operations
+i = 1
+user_input = int(input(f"Number {i}: "))
+while user_input != 0:
+    numbers.append(user_input)
+    i = i + 1
+    user_input = int(input(f"Number {i}: "))
+print(numbers)
+
+print(f"The first number is {numbers[0]}")
+print(f"The last number is {numbers[-1]}")
+print(f"The smallest number is {min(numbers)}")
+print(f"The largest number is {max(numbers)}")
+print(f"The average of the numbers is {(sum(numbers)/len(numbers))}")
