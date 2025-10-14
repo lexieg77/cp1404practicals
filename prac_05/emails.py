@@ -1,20 +1,35 @@
 """
 Emails
 Estimate: 20 mins
-Actual: 28 mins
+Actual: 15 mins
 """
 
-def main():
 
+# ADD IN DOCSTRINGS
+
+def main():
+    """ Display and create a dictionary of name and email pairs"""
     email = input("Email: ")
     email_to_name = {}
 
-    get_name_from_email(email)
+    while email != "":
+        name = get_name_from_email(email)
+        confirmation = input(f"Is your name {name}? (Y/n) ")
+        if confirmation.upper() != "Y" and confirmation != "":
+            name = input("What is your name then: ")
+        email_to_name[email] = name
+        email = input("Email: ")
+
+    for email, name in email_to_name.items():
+        print(f"{name} ({email})")
 
 
 def get_name_from_email(email):
+    """ Extract name from email. """
     name = email.split("@")[0]
-    first_name = name.split(".")[0].capitalize()
-    last_name = name.split(".")[-1].capitalize()
-    return first_name, last_name
+    parts = name.split(".")
+    name = " ".join(parts).title()
+    return name
+
+
 main()
