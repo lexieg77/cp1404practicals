@@ -19,4 +19,3 @@ while state_code != "":
 
 for state_code, state in CODE_TO_NAME.items():
     print(f"{state_code:<3} is {state}")
-
