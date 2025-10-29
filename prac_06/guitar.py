@@ -3,7 +3,7 @@ Expected Time: 45 mins
 Actual Time:
 """
 
-CURRENT_YEAR = 2025
+CURRENT_YEAR = 2017
 VINTAGE_AGE = 50
 
 class Guitar:
