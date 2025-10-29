@@ -1,6 +1,6 @@
 """
 Expected Time: 45 mins
-Actual Time:
+Actual Time: 40 mins
 """
 
 CURRENT_YEAR = 2017
