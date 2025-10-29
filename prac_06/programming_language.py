@@ -1,6 +1,6 @@
 """
 Expected Time: 30 mins
-Actual Time:
+Actual Time: 25 mins
 """
 
 class ProgrammingLanguage:
