@@ -1,18 +1,27 @@
+"""
+Expected Time: 45 mins
+Actual Time:
+"""
+
+CURRENT_YEAR = 2025
+VINTAGE_AGE = 50
+
 class Guitar:
     def __init__(self, name="", year=0, cost=0, age=0):
+        """ Represent guitar information. """
         self.name = name
         self.year = year
         self.cost = cost
         self.age = age
 
     def __str__(self):
+        """ Return name, year and cost. """
         return f"{self.name} ({self.year}) : {self.cost}"
 
     def get_age(self):
-        self.age = 2025 - self.year
+        """ Returns the age of the guitar. """
+        return CURRENT_YEAR - self.year
 
     def is_vintage(self):
-        if self.age > 50:
-            return True
-        else:
-            return False
+        """ Returns if the guitar is vintage or not. """
+        return self.get_age() >= VINTAGE_AGE
