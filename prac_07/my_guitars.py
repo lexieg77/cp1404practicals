@@ -4,8 +4,13 @@ import csv
 
 def main():
     """Guitar program, using Guitar class."""
-    reading_csv_file()
+    guitars = reading_csv_file()
 
+    # Sort guitars by year
+    guitars.sort()
+    print("Guitars sorted by year:")
+    for guitar in guitars:
+        print(guitar)
 
 
 def reading_csv_file():
@@ -13,8 +18,12 @@ def reading_csv_file():
     in_file = open('guitars.csv', 'r', newline='')
     in_file.readline()
     reader = csv.reader(in_file)
+    guitars = []
     for row in reader:
-        print(row)
+        guitars.append(row)
     in_file.close()
+
+    return guitars
+
 
 main()
