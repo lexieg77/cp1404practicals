@@ -24,3 +24,6 @@ class Guitar:
 
     def __lt__(self, other):
         return self.year < other.year
+
+    def add_to_list(self):
+        return [self.name, self.year, self.cost]
