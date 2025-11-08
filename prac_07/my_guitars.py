@@ -17,8 +17,8 @@ def reading_csv_file():
     with open(FILENAME, 'r', newline='') as in_file:
         reader = csv.reader(in_file)
         for line in reader:
-            if len(row) == 3:  # skip bad rows
-                name, year, cost = row
+            if len(line) == 3:  # skip bad rows
+                name, year, cost = line
                 guitars.append(Guitar(name, int(year), float(cost)))
     return guitars
 

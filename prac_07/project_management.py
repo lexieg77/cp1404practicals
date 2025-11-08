@@ -31,7 +31,7 @@ def main():
         elif choice == "S":
             pass
         elif choice == "D":
-            pass
+            display_projects(projects)
         elif choice == "F":
             pass
         elif choice == "A":
@@ -45,17 +45,40 @@ def main():
 
 
 def load_projects(filename):
-    """Load project data form user input."""
+    """Load project data from a file and return a list of Project objects."""
     projects = []
     with open(filename, 'r') as in_file:
-        in_file.readline()
+        in_file.readline()  # skip header
         for line in in_file:
-            clean_line = line.replace("\t", " ").replace("\n", "")
-            projects.append(clean_line)
-        return projects
+            clean_line = line.strip().split("\t")  # split tab-separated values
+            name, start_date, priority, cost_estimate, completion_percentage = clean_line
+            project = Project(
+                name,
+                start_date,
+                int(priority),
+                float(cost_estimate),
+                int(completion_percentage)
+            )
+            projects.append(project)
+    return projects
 
 def save_projects():
     filename = input("Enter a filename to save your projects to ")
+
+
+def display_projects(projects):
+    print("Incomplete projects:")
+    for project in projects:
+        incomplete = project.get_incomplete_projects()
+        if incomplete:
+            print(incomplete)
+
+    print("Completed projects:")
+    for project in projects:
+        complete = project.get_complete_projects()
+        if complete:
+            print(complete)
+
 
 
 main()
