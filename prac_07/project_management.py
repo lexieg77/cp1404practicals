@@ -11,6 +11,7 @@ MENU = """
 
 from prac_07.project import Project
 from datetime import datetime
+import csv
 
 " DOCSTRINGS"
 
@@ -20,6 +21,7 @@ def main():
     print("Welcome to Pythonic Project Management")
     projects = load_projects(FILENAME)
     print(f"Loaded {len(projects)} projects from {FILENAME}.")
+    filename = FILENAME
 
     print(MENU)
     choice = input(">>> ").upper()
@@ -31,7 +33,7 @@ def main():
             projects = load_projects(filename)
             print(projects)
         elif choice == "S":
-            pass
+            save_projects(filename, projects)
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
@@ -64,26 +66,39 @@ def load_projects(filename):
             projects.append(project)
     return projects
 
-def save_projects():
+
+def save_projects(filename, projects):
     """Save projects in memory to the csv file."""
-    filename = input("Enter a filename to save your projects to ")
+    is_save_projects = input("Would you like to save to project.txt (y/n)")
+    if is_save_projects == "y":
+        with open(filename, "w", newline='') as out_file:
+            writer = csv.writer(out_file)
+            for project in projects:
+                writer.writerow([project.name, project.start_date, project.priority, project.cost_estimate,
+                                 project.completion_percentage])
+    else:
+        print("Thank you for using custom-built project management software.")
 
 
 def display_projects(projects):
     """Display incomplete and completed projects."""
     print("Incomplete projects:")
     for project in projects:
-        if project.completion_percentage < 100: # Incomplete project
-            print(f"{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost_estimate}, completion: {project.completion_percentage}%")
+        if project.completion_percentage < 100:  # Incomplete project
+            print(
+                f"{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost_estimate}, completion: {project.completion_percentage}%")
 
     print("Completed projects:")
     for project in projects:
-        if project.completion_percentage == 100: # Complete project
-            print(f"{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost_estimate}, completion: {project.completion_percentage}%")
+        if project.completion_percentage == 100:  # Complete project
+            print(
+                f"{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost_estimate}, completion: {project.completion_percentage}%")
+
 
 def get_project_date(project):
     """Return the project's start date as a datetime object."""
     return datetime.strptime(project.start_date, "%d/%m/%Y")
+
 
 def display_projects_by_date(projects):
     """Display projects after a certain date and sorted by date."""
@@ -96,6 +111,7 @@ def display_projects_by_date(projects):
     for project in filtered_projects:
         print(project)
 
+
 def add_new_project(projects):
     """Add a new project in memory."""
     print("Lets add a new project")
@@ -107,6 +123,7 @@ def add_new_project(projects):
 
     new_project = Project(name, start_date, priority, cost_estimate, completion_percentage)
     projects.append(new_project)
+
 
 def update_project(projects):
     """Update a chosen project in memory."""
