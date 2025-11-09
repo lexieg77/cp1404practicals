@@ -1,5 +1,4 @@
 FILENAME = "projects.txt"
-
 MENU = """
  - (L)oad projects
  - (S)ave projects
@@ -11,14 +10,17 @@ MENU = """
 """
 
 from prac_07.project import Project
+from datetime import datetime
+
+" DOCSTRINGS"
+
 
 def main():
-
+    """Menu options for loading, saving, displaying, filtering, adding and updating projects."""
     print("Welcome to Pythonic Project Management")
     projects = load_projects(FILENAME)
     print(f"Loaded {len(projects)} projects from {FILENAME}.")
 
-    # Menu
     print(MENU)
     choice = input(">>> ").upper()
 
@@ -33,7 +35,7 @@ def main():
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
-            pass
+            display_projects_by_date(projects)
         elif choice == "A":
             add_new_project(projects)
         elif choice == "U":
@@ -63,22 +65,39 @@ def load_projects(filename):
     return projects
 
 def save_projects():
+    """Save projects in memory to the csv file."""
     filename = input("Enter a filename to save your projects to ")
 
 
 def display_projects(projects):
+    """Display incomplete and completed projects."""
     print("Incomplete projects:")
     for project in projects:
-        if project.completion_percentage < 100:
+        if project.completion_percentage < 100: # Incomplete project
             print(f"{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost_estimate}, completion: {project.completion_percentage}%")
 
     print("Completed projects:")
     for project in projects:
-        if project.completion_percentage == 100:
+        if project.completion_percentage == 100: # Complete project
             print(f"{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost_estimate}, completion: {project.completion_percentage}%")
 
+def get_project_date(project):
+    """Return the project's start date as a datetime object."""
+    return datetime.strptime(project.start_date, "%d/%m/%Y")
+
+def display_projects_by_date(projects):
+    """Display projects after a certain date and sorted by date."""
+    input_date = input("Show projects that start after date (dd/mm/yyyy): ")
+    filter_date = datetime.strptime(input_date, "%d/%m/%Y")
+
+    filtered_projects = [project for project in projects if get_project_date(project) >= filter_date]
+    filtered_projects.sort(key=get_project_date)
+
+    for project in filtered_projects:
+        print(project)
 
 def add_new_project(projects):
+    """Add a new project in memory."""
     print("Lets add a new project")
     name = input("Name: ")
     start_date = input("Start date (dd/mm/yy): ")
@@ -90,7 +109,7 @@ def add_new_project(projects):
     projects.append(new_project)
 
 def update_project(projects):
-    i = 0
+    """Update a chosen project in memory."""
     for i, project in enumerate(projects):
         print(f"{i} {project}")
 
