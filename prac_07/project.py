@@ -9,12 +9,4 @@ class Project:
         self.completion_percentage = completion_percentage
 
     def __repr__(self):
-        return self.name, self.start_date, self.priority, self.cost_estimate, self.completion_percentage
-
-    def get_incomplete_projects(self):
-        if self.completion_percentage < 100:
-            return f"{self.name}, start: {self.start_date}, priority {self.priority}, estimate: ${self.cost_estimate}, completion: {self.completion_percentage}%"
-
-    def get_complete_projects(self):
-        if self.completion_percentage == 100:
-            return f"{self.name}, start: {self.start_date}, priority {self.priority}, estimate: ${self.cost_estimate}, completion: {self.completion_percentage}%"
+        return f"{self.name}, {self.start_date}, {self.priority}, ${self.cost_estimate:.2f}, {self.completion_percentage}%"

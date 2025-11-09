@@ -35,7 +35,7 @@ def main():
         elif choice == "F":
             pass
         elif choice == "A":
-            pass
+            add_new_project(projects)
         elif choice == "U":
             pass
         else:
@@ -69,16 +69,24 @@ def save_projects():
 def display_projects(projects):
     print("Incomplete projects:")
     for project in projects:
-        incomplete = project.get_incomplete_projects()
-        if incomplete:
-            print(incomplete)
+        if project.completion_percentage < 100:
+            print(f"{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost_estimate}, completion: {project.completion_percentage}%")
 
     print("Completed projects:")
     for project in projects:
-        complete = project.get_complete_projects()
-        if complete:
-            print(complete)
+        if project.completion_percentage == 100:
+            print(f"{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost_estimate}, completion: {project.completion_percentage}%")
 
 
+def add_new_project(projects):
+    print("Lets add a new project")
+    name = input("Name: ")
+    start_date = input("Start date (dd/mm/yy): ")
+    priority = int(input("Priority: "))
+    cost_estimate = float(input("Cost estimate: $"))
+    completion_percentage = float(input("Percent complete: "))
+
+    new_project = Project(name, start_date, priority, cost_estimate, completion_percentage)
+    projects.append(new_project)
 
 main()
