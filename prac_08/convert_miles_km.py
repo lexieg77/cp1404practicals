@@ -16,9 +16,14 @@ class ConvertMilesKmApp(App):
         return self.root
 
 
-
     def handle_conversion(self):
         """Handle changes to the text input by updating the model from the view."""
-        self.output = self.root.ids.input_number
+        self.output = self.root.ids.input_miles
+
+    def handle_increment(self, change):
+        """Handle incrementing up and down using the buttons."""
+        value = float(self.root.ids.input_miles.text) + change
+        self.root.ids.input_miles.text = str(value)
+        #self.handle_conversion()
 
 ConvertMilesKmApp().run()
