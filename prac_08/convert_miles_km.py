@@ -3,6 +3,8 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.properties import StringProperty
 
+MILES_TO_KM = 1.60934
+
 class ConvertMilesKmApp(App):
     """ConvertMilesKmApp is a Kivy App for converting miles to km."""
 
@@ -18,7 +20,8 @@ class ConvertMilesKmApp(App):
 
     def handle_conversion(self):
         """Handle changes to the text input by updating the model from the view."""
-        self.output = self.root.ids.input_miles
+        result = float(self.root.ids.input_miles.text) * MILES_TO_KM
+        self.output = str(result)
 
     def handle_increment(self, change):
         """Handle incrementing up and down using the buttons."""

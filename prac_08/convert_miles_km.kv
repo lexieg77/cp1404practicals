@@ -20,6 +20,8 @@ BoxLayout:
     Button:
         id: convert
         text: "Convert m to km"
+        on_press: app.handle_conversion()
+
     Label:
         id: output_label
         text: app.output
