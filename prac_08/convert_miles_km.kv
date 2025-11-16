@@ -1,0 +1,24 @@
+BoxLayout:
+    orientation: "vertical"
+    BoxLayout:
+        orientation: "horizontal"
+        TextInput:
+            id: input_number
+            text: '34'
+            font_size: 48
+            multiline: False
+
+        BoxLayout:
+            orientation: "vertical"
+            Button:
+                id: up
+                text: "Up"
+            Button:
+                id: down
+                text: "Down"
+    Button:
+        id: convert
+        text: "Convert m to km"
+    Label:
+        id: output_label
+        text: ""
