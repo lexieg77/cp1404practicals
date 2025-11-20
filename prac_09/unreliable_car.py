@@ -7,3 +7,11 @@ class UnreliableCar(Car):
         super().__init__(name, fuel)
         self.reliability = reliability
 
+
+    def drive(self, distance):
+        """Driving the car if the reliability is big enough."""
+        random_num = randint(0, 100)
+        if random_num >= self.reliability:
+            distance = 0
+        driving_distance = Car.drive(distance)
+        return driving_distance
