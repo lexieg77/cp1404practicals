@@ -8,5 +8,4 @@ def main():
     print(my_silver_service_taxi)
     print(f"Current fare: ${my_silver_service_taxi.get_fare():.2f}")
 
-
 main()

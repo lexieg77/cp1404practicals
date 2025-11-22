@@ -1,4 +1,4 @@
-"""Band example with list of musicians."""
+"""Band example."""
 from band import Band
 from musician import Musician
 from guitar import Guitar
