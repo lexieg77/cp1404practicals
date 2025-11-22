@@ -14,4 +14,10 @@ class Band:
         """Return a string representation of a Band, showing the variables."""
         return str(vars(self))
 
+    def add(self, musician):
+        """Add musician to a Band"""
+        self.musicians.append(musician)
 
+    def play(self):
+        """Return what instrument each musician is playing"""
+        return "\n".join(musician.play() for musician in self.musicians)
