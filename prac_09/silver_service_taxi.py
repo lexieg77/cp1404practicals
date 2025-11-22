@@ -1,5 +1,6 @@
 from taxi import Taxi
 
+
 class SilverServiceTaxi(Taxi):
     """Silver Service Taxi."""
     flagfall = 4.50
