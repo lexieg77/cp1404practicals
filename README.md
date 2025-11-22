@@ -11,4 +11,5 @@ My name is Lexie and I am a fourth year electrical engineering student
 
 ## Links
 [Programming Patterns](https://github.com/CP1404/Starter/wiki/Programming-Patterns)
+
 [CP1404 Practicals instructions repo](https://github.com/CP1404/Practicals)
