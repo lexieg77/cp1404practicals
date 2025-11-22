@@ -20,6 +20,24 @@ def choose_taxi(taxis, bill_to_date):
         return taxis[index]
 
 
+def drive(current_taxi, bill_to_date):
+    """Return bill to date after driving the taxi."""
+    if current_taxi is None:
+        print("You need to choose a taxi before you can drive")
+        print(f"Bill to date: ${bill_to_date:.2f}")
+        return bill_to_date
+
+    distance = int(input("Drive how far? "))
+
+    current_taxi.start_fare()
+    current_taxi.drive(distance)
+    trip_cost = current_taxi.get_fare()
+    bill_to_date += trip_cost
+
+    print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
+    print(f"Bill to date: ${bill_to_date:.2f}")
+
+    return bill_to_date
 
 
 def main():
